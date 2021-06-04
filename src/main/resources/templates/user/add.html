@@ -6,11 +6,20 @@
 </head>
 <body>
     <form method="post" th:action="@{/user}">
-        <input type="text" name="Username" th:value="${username}">
-        <input type="text" name="Email" th:value="${email}">
-        <input type="password" name="Password" th:value="${password}">
-        <input type="submit" value="sign up">
+        <label> Username:
+        <input type="text" name="username" th:value="${username}">
+        </label>
+        <label> Email:
+        <input type="text" name="email" th:value="${email}">
+        </label>
+        <label> Password:
+        <input type="password" name="password">
+        </label>
+        <label> Verify Password:
+        <input type="password" name="verify">
+        </label>
         <p th:text="${error}"></p>
+        <input type="submit" value="Sign up!">
     </form>
 </body>
 </html>

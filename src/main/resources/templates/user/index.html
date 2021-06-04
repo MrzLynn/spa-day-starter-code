@@ -2,10 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>User Area</title>
-    <a th: href=""></a>
+    <title>Welcome</title>
+
 </head>
 <body>
-
+<p th:text=" 'Welcome' + ${user.username} + '!'"></p>
+<a th: href="@{/}">
+    Select your spa services here
+</a>
 </body>
 </html>
