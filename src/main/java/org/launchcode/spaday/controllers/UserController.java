@@ -28,9 +28,9 @@ public class UserController {
 
             model.addAttribute("errorMsg", "Please enter valid information");
             return "user/add";
-        }
-        return "user/index";
+        } else {
+            return "user/index";
         }
 
-
+    }
 }
