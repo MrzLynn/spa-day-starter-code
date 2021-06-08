@@ -23,24 +23,14 @@ public class UserController {
 
     @PostMapping("/add")
     public String processAddUserForm(Model model, @ModelAttribute @Valid User user, Errors errors, String verify) {
-//            model.addAttribute("user", user);
-//            model.addAttribute("verify", verify);
-//            model.addAttribute("username", user.getUsername());
-//            model.addAttribute("email", user.getEmail());
+        model.addAttribute("verify", verify);
         if (errors.hasErrors() || !user.getPassword().equals(verify)) {
 
-//                model.addAttribute("user","Add user");
             model.addAttribute("errorMsg", "Please enter valid information");
             return "user/add";
         }
         return "user/index";
         }
-//            if(user.getPassword().equals(verify)){
-//                return "user/index";
-//            }
-//            else
-//            model.addAttribute("error","Wrong password, try again!");
-//                return "user/add";
 
 
 }
