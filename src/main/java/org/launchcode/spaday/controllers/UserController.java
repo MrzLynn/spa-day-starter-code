@@ -21,14 +21,13 @@ public class UserController {
         return "user/add";
     }
 
-    @PostMapping("/add")
-    public String processAddUserForm(Model model, @ModelAttribute @Valid User user, Errors errors, String verify) {
-        model.addAttribute("verify", verify);
-        if (errors.hasErrors() || !user.getPassword().equals(verify)) {
+    @PostMapping
+    public String processAddUserForm(Model model, @ModelAttribute @Valid User user, Errors errors) {
 
-            model.addAttribute("errorMsg", "Please enter valid information");
+        if (errors.hasErrors()) {
             return "user/add";
-        } else {
+        }
+        else {
             return "user/index";
         }
 
